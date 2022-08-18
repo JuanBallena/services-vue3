@@ -1,0 +1,105 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.title {
+  font-size: variables.$size-14;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: variables.$size-11;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.section {
+  padding: 3rem 6rem;
+}
+
+.g-accounting-services {
+  $background: #{functions.light-dark(variables.$white-color, variables.$dark-color)};
+
+  background: $background;
+  margin-top: 6.5rem;
+  &__circle-rotative {
+    padding: 4rem 0;
+
+    // background-size: 300% 300%;
+    // background-image: linear-gradient(
+    //   -45deg,
+    //   rgba(59, 173, 227, 1) 0%,
+    //   rgba(87, 111, 230, 1) 25%,
+    //   rgba(152, 68, 183, 1) 51%,
+    //   rgba(255, 53, 127, 1) 100%
+    // );
+    // animation: AnimateBG 10s ease infinite;
+
+    // @keyframes AnimateBG {
+    //   0% {
+    //     background-position: 0% 50%;
+    //   }
+    //   50% {
+    //     background-position: 100% 50%;
+    //   }
+    //   100% {
+    //     background-position: 0% 50%;
+    //   }
+    // }
+  }
+  &__about-us {
+    $background: #{functions.light-dark(variables.$white-color, variables.$dark-color)};
+
+    background: $background;
+    @extend .section;
+    p:first-child {
+      $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+      color: $color;
+      @extend .title;
+    }
+    p:last-child {
+      $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+      color: $color;
+      @extend .paragraph;
+    }
+  }
+  &__services {
+    $background: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+    background: $background;
+    @extend .section;
+    p:first-child {
+      $color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+      color: $color;
+      @extend .title;
+      text-align: center;
+      width: 100%;
+    }
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12rem;
+    }
+  }
+  &__suggestions {
+    $background: #{functions.light-dark(variables.$white-color, variables.$dark-color)};
+
+    background: $background;
+    @extend .section;
+    p:first-child {
+      $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+      color: $color;
+      @extend .title;
+    }
+    p:last-child {
+      $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+      color: $color;
+      @extend .paragraph;
+    }
+  }
+}

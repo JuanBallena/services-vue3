@@ -1,0 +1,86 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.g-accounting-loading {
+  $background: #{functions.light-dark(variables.$white-color, variables.$dark-color)};
+
+  background: $background;
+  overflow: hidden;
+  height: 100vh;
+  &__container {
+    width: 120%;
+    height: 100%;
+    display: grid;
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(17vw, 1fr));
+    grid-auto-rows: 45vh;
+    transform: rotate(-10deg);
+    margin: -150px 0 0 -150px;
+    aside {
+      box-shadow: variables.$shadow-light;
+      border-radius: 10px;
+      background: rgba(variables.$primary-color, 0.4);
+      img {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    aside:nth-child(1),
+    aside:nth-child(4),
+    aside:nth-child(8),
+    aside:nth-child(11) {
+      grid-column-end: span 1;
+    }
+    aside:nth-child(6) {
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-10deg);
+        }
+      }
+
+      animation: rotate 1s alternate-reverse infinite;
+    }
+    aside:nth-child(2),
+    aside:nth-child(3),
+    aside:nth-child(5),
+    aside:nth-child(6),
+    aside:nth-child(7),
+    aside:nth-child(9),
+    aside:nth-child(10) {
+      grid-column-end: span 2;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .g-accounting-loading {
+    &__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(0);
+      margin: 0;
+      aside:nth-child(1),
+      aside:nth-child(2),
+      aside:nth-child(3),
+      aside:nth-child(4),
+      aside:nth-child(5),
+      aside:nth-child(7),
+      aside:nth-child(8),
+      aside:nth-child(9),
+      aside:nth-child(10),
+      aside:nth-child(11) {
+        display: none;
+      }
+      aside:nth-child(6) {
+        width: 60%;
+      }
+    }
+  }
+}

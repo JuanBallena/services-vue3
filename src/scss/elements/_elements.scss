@@ -1,0 +1,41 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+body {
+  font-family: variables.$font-family;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+label {
+  $color: #{functions.light-dark(variables.$gray-color-1, variables.$white-color)};
+
+  color: $color;
+  font-weight: 400;
+  font-size: variables.$size-7;
+}
+
+p {
+  $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+  color: $color;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+i {
+  display: block;
+}
+
+@media (max-width: variables.$max-width-lg) {
+  label {
+    font-size: variables.$size-11;
+  }
+}

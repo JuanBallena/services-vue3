@@ -1,0 +1,190 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.a-text {
+  &--shadow {
+    $text-shadow: #{functions.light-dark(variables.$shadow-light, variables.$shadow-dark)};
+
+    text-shadow: $text-shadow;
+  }
+  &--cursive {
+    font-style: italic;
+  }
+  &--primary {
+    $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+    color: $color;
+  }
+  &--white {
+    $color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+    color: $color;
+  }
+  &--black {
+    $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+    color: $color;
+  }
+  &--gray-1 {
+    $color: #{functions.light-dark(variables.$gray-color-1, variables.$white-color)};
+
+    color: $color;
+  }
+  &--gray-2 {
+    $color: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-2)};
+
+    color: $color;
+  }
+  &--justify {
+    text-align: justify;
+  }
+  &--line-height-1 {
+    line-height: 1.1;
+  }
+  &--line-height-2 {
+    line-height: 1.2;
+  }
+  &--line-height-3 {
+    line-height: 1.3;
+  }
+  &--line-height-4 {
+    line-height: 1.4;
+  }
+  &--bold {
+    font-weight: bold;
+  }
+  &--400 {
+    font-weight: 400;
+  }
+  &--500 {
+    font-weight: 500;
+  }
+  &--600 {
+    font-weight: 600;
+  }
+  &--700 {
+    font-weight: 700;
+  }
+  &--800 {
+    font-weight: 800;
+  }
+  &--900 {
+    font-weight: 900;
+  }
+  &--size-4 {
+    font-size: variables.$size-4;
+  }
+  &--size-5 {
+    font-size: variables.$size-5;
+  }
+  &--size-6 {
+    font-size: variables.$size-6;
+  }
+  &--size-7 {
+    font-size: variables.$size-7;
+  }
+  &--size-8 {
+    font-size: variables.$size-8;
+  }
+  &--size-9 {
+    font-size: variables.$size-9;
+  }
+  &--size-10 {
+    font-size: variables.$size-10;
+  }
+  &--size-11 {
+    font-size: variables.$size-11;
+  }
+  &--size-12 {
+    font-size: variables.$size-12;
+  }
+  &--size-13 {
+    font-size: variables.$size-13;
+  }
+  &--size-14 {
+    font-size: variables.$size-14;
+  }
+  &--size-15 {
+    font-size: variables.$size-15;
+  }
+  &--size-16 {
+    font-size: variables.$size-16;
+  }
+  &--size-17 {
+    font-size: variables.$size-17;
+  }
+  &--size-18 {
+    font-size: variables.$size-18;
+  }
+  &--size-19 {
+    font-size: variables.$size-19;
+  }
+  &--size-20 {
+    font-size: variables.$size-20;
+  }
+  &--size-21 {
+    font-size: variables.$size-21;
+  }
+  &--size-22 {
+    font-size: variables.$size-22;
+  }
+  &--size-23 {
+    font-size: variables.$size-23;
+  }
+  &--size-24 {
+    font-size: variables.$size-24;
+  }
+  &--size-25 {
+    font-size: variables.$size-25;
+  }
+  &--size-26 {
+    font-size: variables.$size-26;
+  }
+  &--no-decoration {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .a-text {
+    &--size-4 {
+      font-size: variables.$size-8;
+    }
+    &--size-5 {
+      font-size: variables.$size-9;
+    }
+    &--size-6 {
+      font-size: variables.$size-10;
+    }
+    &--size-7 {
+      font-size: variables.$size-11;
+    }
+    &--size-8 {
+      font-size: variables.$size-12;
+    }
+    &--size-9 {
+      font-size: variables.$size-13;
+    }
+    &--size-10 {
+      font-size: variables.$size-14;
+    }
+    &--size-11 {
+      font-size: variables.$size-15;
+    }
+    &--size-12 {
+      font-size: variables.$size-16;
+    }
+    &--size-13 {
+      font-size: variables.$size-17;
+    }
+    &--size-14 {
+      font-size: variables.$size-18;
+    }
+    &--size-15 {
+      font-size: variables.$size-19;
+    }
+    &--size-16 {
+      font-size: variables.$size-20;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.m-collapsible {
+  $border-top: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+  border-top: 1px solid $border-top;
+  &__visible-text {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: variables.$size-11;
+  }
+  &__hidden-text {
+    $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+    color: $color;
+    // font-weight: bold;
+    font-style: italic;
+    font-size: variables.$size-10;
+    padding: 0 2rem 1rem 2rem;
+  }
+  &--visible {
+    display: block;
+  }
+  &--hide {
+    display: none;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .m-collapsible {
+    &__visible-text {
+      padding: 1rem 0.5rem;
+      font-size: variables.$size-15;
+    }
+    &__hidden-text {
+      font-size: variables.$size-14;
+      padding: 0 1rem 1rem 1rem;
+    }
+  }
+}

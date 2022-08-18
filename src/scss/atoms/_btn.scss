@@ -1,0 +1,57 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.a-btn {
+  $background: #{functions.light-dark(variables.$gray-color-3, variables.$gray-color-3)};
+  $color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+  background: $background;
+  color: $color;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: variables.$size-8;
+  &--small {
+    font-size: variables.$size-6;
+    padding: 0.7rem;
+  }
+  &--rounded {
+    border-radius: 10px;
+  }
+  &--block {
+    width: 100%;
+  }
+  &--white {
+    background: variables.$white-color;
+    color: variables.$black-color;
+  }
+  &--outline-primary {
+    $background: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+    $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+    background: $background;
+    color: $color;
+  }
+  &--primary {
+    $background: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+    $color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+    background: $background;
+    color: $color;
+  }
+  &--gray-3 {
+    $background: #{functions.light-dark(variables.$gray-color-3, variables.$gray-color-3)};
+    $color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+    background: $background;
+    color: $color;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .a-btn {
+    font-size: variables.$size-12;
+  }
+}

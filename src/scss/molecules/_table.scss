@@ -1,0 +1,65 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.m-table {
+  width: 100%;
+  border-collapse: collapse;
+  th,
+  td {
+    padding: 1rem 0.6rem;
+    text-align: left;
+    // svg {
+    //   transform: scale(1);
+    //   margin: 0;
+    //   padding: 0;
+    // }
+  }
+  th {
+    font-size: variables.$size-5;
+    text-transform: uppercase;
+    color: variables.$gray-color-2;
+    font-weight: 400;
+  }
+  td {
+    $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+    font-size: variables.$size-6;
+    color: $color;
+  }
+  // &--hover {
+  //   position: relative;
+  //   transform: scale(1);
+  //   cursor: pointer;
+  //   &::after {
+  //     $background: #{functions.light-dark(variables.$caqui-color, variables.$caqui-color)};
+
+  //     background: $background;
+  //     content: "";
+  //     position: absolute;
+  //     top: 0;
+  //     left: -46px;
+  //     bottom: 0;
+  //     right: -46px;
+  //     z-index: -2;
+  //     box-shadow: 0px 11px 16px rgba(0, 0, 0, 0.37);
+  //   }
+  // }
+  &--active {
+    td {
+      $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+      color: $color;
+      // font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .m-table {
+    th {
+      font-size: variables.$size-9;
+    }
+    td {
+      font-size: variables.$size-11;
+    }
+  }
+}

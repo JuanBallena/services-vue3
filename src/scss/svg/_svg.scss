@@ -1,0 +1,167 @@
+@use "../settings/variables";
+@use "../tools/functions";
+@use "../tools/mixins";
+
+.svg {
+  &--scale {
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.5s;
+    }
+  }
+  &--center {
+    margin: 0 auto;
+    display: block;
+  }
+  &--scale-0 {
+    @include mixins.scale(0.2, 1.5, 0);
+  }
+  &--scale-1 {
+    @include mixins.scale(1, 2);
+  }
+  &--scale-2 {
+    @include mixins.scale(1.5, 3);
+  }
+  &--scale-3 {
+    @include mixins.scale(2, 4);
+  }
+  &--scale-4 {
+    @include mixins.scale(2.5, 12.5);
+  }
+  &--scale-5 {
+    @include mixins.scale(3, 6);
+  }
+  &--scale-6 {
+    @include mixins.scale(3.5, 7);
+  }
+}
+.svg-pencil,
+.svg-eye {
+  $fill: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+  fill: $fill;
+  &--white {
+    $fill: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+    fill: $fill;
+  }
+
+  &--primary {
+    $fill: #{functions.light-dark(variables.$primary-color, variables.$white-color)};
+
+    fill: $fill;
+  }
+  &--gray-1 {
+    $fill: #{functions.light-dark(variables.$gray-color-1, variables.$white-color)};
+
+    fill: $fill;
+  }
+}
+
+.svg-arrow-top,
+.svg-arrow-bottom,
+.svg-arrow-right,
+.svg-arrow-left,
+.svg-message,
+.svg-mobile,
+.svg-home {
+  path {
+    $stroke: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+    stroke: $stroke;
+  }
+  &--primary {
+    path {
+      $stroke: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+      stroke: $stroke;
+    }
+  }
+  &--gray-2 {
+    path {
+      $stroke: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-2)};
+
+      stroke: $stroke;
+    }
+  }
+  &--white {
+    path {
+      $stroke: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+      stroke: $stroke;
+    }
+  }
+  &--black {
+    path {
+      $stroke: #{functions.light-dark(variables.$black-color, variables.$black-color)};
+
+      stroke: $stroke;
+    }
+  }
+}
+
+.svg-social,
+.svg-user,
+.svg-edit,
+.svg-calendar,
+.svg-music,
+.svg-setting,
+.svg-exit,
+.svg-assignment,
+.svg-play,
+.svg-pause,
+.svg-mail,
+.svg-dateline,
+.svg-bookmark,
+.svg-logo {
+  path {
+    $fill: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+    fill: $fill;
+  }
+
+  &--primary {
+    path {
+      $fill: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+      fill: $fill;
+    }
+  }
+  &--gray-1 {
+    path {
+      $fill: #{functions.light-dark(variables.$gray-color-1, variables.$white-color)};
+
+      fill: $fill;
+    }
+  }
+  &--gray-2 {
+    path {
+      $fill: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-2)};
+
+      fill: $fill;
+    }
+  }
+  &--white {
+    path {
+      $fill: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+      fill: $fill;
+    }
+  }
+}
+
+.svg-date {
+  &--gray-1 {
+    rect {
+      $stroke: #{functions.light-dark(variables.$gray-color-1, variables.$white-color)};
+
+      stroke: $stroke;
+    }
+    path {
+      $stroke: #{functions.light-dark(variables.$gray-color-1, variables.$white-color)};
+
+      stroke: $stroke;
+    }
+  }
+}

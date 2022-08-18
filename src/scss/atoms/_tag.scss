@@ -1,0 +1,24 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.a-tag {
+  $background: #{functions.light-dark(variables.$gray-color-1, variables.$gray-color-1)};
+
+  background: $background;
+  // position: absolute;
+  right: 0;
+  top: 15px;
+  width: 99px;
+  height: 21px;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0.3em 0.4em;
+  color: variables.$white-color;
+  &--warning {
+    $background: #{functions.light-dark(variables.$yellow-color, variables.$yellow-color)};
+
+    background: $background;
+    color: variables.$black-color;
+  }
+}

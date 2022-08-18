@@ -1,0 +1,26 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.m-list {
+  li {
+    $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+    color: $color;
+    padding-bottom: 0.6rem;
+    font-size: variables.$size-7;
+  }
+  &__number {
+    $color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+
+    color: $color;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .m-list {
+    li {
+      font-size: variables.$size-11;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.has-bg-white {
+  background: #{functions.light-dark(variables.$white-color, variables.$dark-color)};
+}
+
+.has-bg-primary {
+  background: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+}
+
+.has-bg-black {
+  background: #{functions.light-dark(variables.$black-color, variables.$dark-color)};
+}
+
+.has-bg-accent {
+  background: #{functions.light-dark(variables.$accent-color, variables.$dark-color)};
+}
+
+.has-bg-gray-2 {
+  background: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-2)};
+}
+
+.has-bg-primary-90-horizontal {
+  $background-ligth: linear-gradient(to right, variables.$primary-color 90%, variables.$white-color 10%);
+  $background-dark: linear-gradient(to right, variables.$primary-inverted-color 90%, variables.$dark-color 10%);
+
+  $background: #{functions.light-dark($background-ligth, $background-dark)};
+
+  background: $background;
+}
+
+.has-bg-white-90-vertical {
+  $background-ligth: linear-gradient(
+    variables.$primary-color 0%,
+    variables.$primary-color 10%,
+    variables.$white-color 10%,
+    variables.$white-color 100%
+  );
+  $background-dark: linear-gradient(
+    variables.$primary-inverted-color 0%,
+    variables.$primary-inverted-color 10%,
+    variables.$white-color 10%,
+    variables.$white-color 100%
+  );
+
+  $background: #{functions.light-dark($background-ligth, $background-dark)};
+
+  background: $background;
+}
+
+.has-maximun-percentage {
+  width: 100%;
+  height: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}

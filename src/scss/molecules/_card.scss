@@ -1,0 +1,27 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.m-card {
+  $background: #{functions.light-dark(variables.$black-color, variables.$dark-color)};
+
+  background: $background;
+  box-shadow: variables.$box-shadow;
+  height: 100%;
+  padding: 2rem;
+  position: relative;
+  &__header {
+    $color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+
+    color: $color;
+    font-size: variables.$size-8;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__body {
+    height: auto;
+  }
+  &--rounded {
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,97 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.m-circle-rotative {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__circle {
+    cursor: pointer;
+    --radius: 35vmin;
+    position: relative;
+    --scope: calc(var(--radius) * 1);
+    width: calc(2 * var(--scope));
+    height: calc(2 * var(--scope));
+    animation: rotate 35s linear infinite;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    border-radius: 50%;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__circle::before {
+    width: calc(2 * var(--radius));
+    top: calc(var(--radius) * 0.2);
+    left: calc(var(--radius) * 0.2);
+  }
+
+  &__element {
+    height: calc(var(--radius) * 1);
+    width: calc(var(--radius) / 4);
+    position: absolute;
+    bottom: var(--scope);
+    left: calc(var(--scope) - (0.5 * var(--radius) / 5));
+    transform-origin: center bottom;
+    transform: rotate(calc(var(--n) * 36deg));
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    img {
+      width: 100px;
+    }
+  }
+
+  &__element:nth-child(1) {
+    --n: 1;
+  }
+
+  &__element:nth-child(2) {
+    --n: 2;
+  }
+
+  &__element:nth-child(3) {
+    --n: 3;
+  }
+
+  &__element:nth-child(4) {
+    --n: 4;
+  }
+
+  &__element:nth-child(5) {
+    --n: 5;
+  }
+
+  &__element:nth-child(6) {
+    --n: 6;
+  }
+
+  &__element:nth-child(7) {
+    --n: 7;
+  }
+
+  &__element:nth-child(8) {
+    --n: 8;
+  }
+
+  &__element:nth-child(9) {
+    --n: 9;
+  }
+
+  &__element:nth-child(10) {
+    --n: 10;
+  }
+}
